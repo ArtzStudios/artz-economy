@@ -1,0 +1,8 @@
+CODE_OF_CONDUCT.md
+package-lock.json
+.gitignore
+.npmignore
+.git
+.github
+assets/
+tests/
