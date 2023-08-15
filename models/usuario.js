@@ -8,4 +8,4 @@ const Perfil = new mongoose.Schema({
     lastUpdated: { type: Date, default: new Date() },
 });
 
-module.exports = mongoose.model('artz-eco-perfil', ProfileSchema)
+module.exports = mongoose.model('artz-eco-perfil', Perfil)
