@@ -10,7 +10,10 @@
     "economy",
     "mongoose",
     "eco",
-    "djs"
+    "djs",
+    "discord",
+    "framework",
+    "mongodb"
   ],
   "author": "JuqnDev",
   "license": "ISC",
