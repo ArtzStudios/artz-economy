@@ -9,23 +9,31 @@ npm install artz-economy
 
 ## __Changelog__
 
-v0.0.1
+v0.0.3
+* Se crearon las funciones: `mano`, `banco`, `depositar`, `retirar`.
+
+v0.0.2
+* Se corrigió un bug con el modelo de mongoose.
+
+v0.0.1 
 * Se crearon las funciones: `crearPerfil`, `borrarPerfil`, `sumarBanco`, `restarBanco`, `sumarMano`, `restarMano`, `establecerBanco`, `establecerMano`, `fetch`.
 
 ## __Métodos__
-- [fetch](##fetch)
+- [fetch](#fetch)
+- [mano](#mano)
+- [banco](#banco)
 ---
-- [crearPerfil](##crearPerfil)
-- [borrarPerfil](##borrarPerfil)
+- [crearPerfil](#crearPerfil)
+- [borrarPerfil](#borrarPerfil)
 ---
-- [sumarBanco](##sumarBanco)
-- [sumarMano](##sumarBanco)
+- [sumarBanco](#sumarBanco)
+- [sumarMano](#sumarBanco)
 ---
-- [restarMano](##restarMano)
-- [restarBanco](##restarBanco)
+- [restarMano](#restarMano)
+- [restarBanco](#restarBanco)
 ---
-- [establecerMano](##establecerMano)
-- [establecerBanco](##establecerBanco)
+- [establecerMano](#establecerMano)
+- [establecerBanco](#establecerBanco)
 ---
 
 ## fetch
@@ -48,6 +56,54 @@ const eco = require("artz-economy").setUrl(mongodb)
 let perfil = eco.fetch(message.guild.id, message.author.id)
 
 console.log(perfil)
+```
+
+---
+
+## mano
+
+```js
+mano(guildId, userId)
+```
+
+__Argumentos__
+1. **guildId:** Acá se deberá insertar la ID de un servidor, la cual se usará para separar la información de un mismo usuario de varios servidores.
+2. **userId:** Acá se deberá insertar la ID del usuario que contendrá la información del mismo.
+
+__Retorno__
+- Retorna la cantidad de dinero en la mano del usuario.
+
+__Ejemplo__
+```js
+const eco = require("artz-economy").setUrl(mongodb)
+
+let perfil = eco.mano(message.guild.id, message.author.id)
+
+console.log(perfil) // 300
+```
+
+---
+
+## banco
+
+```js
+banco(guildId, userId)
+```
+
+__Argumentos__
+1. **guildId:** Acá se deberá insertar la ID de un servidor, la cual se usará para separar la información de un mismo usuario de varios servidores.
+2. **userId:** Acá se deberá insertar la ID del usuario que contendrá la información del mismo.
+
+__Retorno__
+- Retorna la cantidad de dinero en el banco del usuario.
+
+__Ejemplo__
+```js
+const eco = require("artz-economy").setUrl(mongodb)
+
+let perfil = eco.banco(message.guild.id, message.author.id)
+
+console.log(perfil) // 300
 ```
 
 ---
