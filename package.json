@@ -1,6 +1,6 @@
 {
   "name": "artz-economy",
-v0.  "version": "0.1.0-a",
+  "version": "0.1.0-a",
   "description": "Framework para usar más fácilmente mongoose en un sistema de economía y/o niveles.",
   "main": "index.js",
   "scripts": {
