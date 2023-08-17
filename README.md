@@ -18,9 +18,13 @@ npm install artz-economy@latest
 
 ## **Changelog**
 
-v0.0.4c _Actual_
+v0.1.0-a _Actual_
 
-- Se cambió de licencia y se añadió un apartado de soporte y comunidad
+- Se agregaron opciones de niveles, entre ello, los métodos: `xp`, `nivel`, `sumarXp`, `sumarNivel`, `subirNivel`.
+
+v0.0.4c
+
+- Se cambió de licencia y se añadió un apartado de soporte y comunidad.
 
 v0.0.4b
 
@@ -65,6 +69,12 @@ v0.0.1
 - [depositar](#depositar)
 
 ---
+
+- [xp](#xp)
+- [nivel](#nivel)
+- [sumarXp](#sumarXp)
+- [sumarNivel](#sumarNivel)
+- [subirNivel](#subirNivel)
 
 ## fetch
 
@@ -500,4 +510,168 @@ console.log(perfil)
     mano: 600,
     banco: 0
 }
+```
+
+## xp
+
+```js
+xp(guildId, userId);
+```
+
+**Argumentos**
+
+1. **guildId:** Acá se deberá insertar la ID de un servidor, la cual se usará para separar la información de un mismo usuario de varios servidores.
+2. **userId:** Acá se deberá insertar la ID del usuario que contendrá la información del mismo.
+
+**Retorno**
+
+- Retorna la experiencia del usuario.
+
+**Ejemplo**
+
+```js
+const eco = require("artz-economy");
+eco.setUrl(mongodb);
+
+let exp = await eco.xp(message.guild.id, message.author.id);
+
+console.log(exp); // 396
+```
+
+## nivel
+
+```js
+nivel(guildId, userId);
+```
+
+**Argumentos**
+
+1. **guildId:** Acá se deberá insertar la ID de un servidor, la cual se usará para separar la información de un mismo usuario de varios servidores.
+2. **userId:** Acá se deberá insertar la ID del usuario que contendrá la información del mismo.
+
+**Retorno**
+
+- Retorna el nivel del usuario.
+
+**Ejemplo**
+
+```js
+const eco = require("artz-economy");
+eco.setUrl(mongodb);
+
+let nivel = await eco.nivel(message.guild.id, message.author.id);
+
+console.log(nivel); // 3
+```
+
+## sumarXp
+
+```js
+sumarXp(guildId, userId, cantidad);
+```
+
+**Argumentos**
+
+1. **guildId:** Acá se deberá insertar la ID de un servidor, la cual se usará para separar la información de un mismo usuario de varios servidores.
+2. **userId:** Acá se deberá insertar la ID del usuario que contendrá la información del mismo.
+3. **cantidad:** Acá se insertará la cantidad de experiencia a sumar al usuario.
+
+**Retorno**
+
+- Retorna la información del usuario.
+
+**Ejemplo**
+
+```js
+const eco = require("artz-economy");
+eco.setUrl(mongodb);
+
+let exp = await eco.sumarXp(message.guild.id, message.author.id, 333);
+
+console.log(exp);
+/* {
+    guildID: 'id de la guild',
+    userID: 'id del usuario',
+    mano: 0,
+    banco: 600,
+    xp: 433,
+    nivel: 1
+}*/
+```
+
+## sumarNivel
+
+```js
+sumarNivel(guildId, userId, cantidad);
+```
+
+**Argumentos**
+
+1. **guildId:** Acá se deberá insertar la ID de un servidor, la cual se usará para separar la información de un mismo usuario de varios servidores.
+2. **userId:** Acá se deberá insertar la ID del usuario que contendrá la información del mismo.
+3. **cantidad:** Acá se insertará la cantidad de niveles a sumar al usuario.
+
+**Anotación**
+
+- Se recomienda el uso del método `subirNivel` en lugar de éste método.
+
+**Retorno**
+
+- Retorna la información del usuario.
+
+**Ejemplo**
+
+```js
+const eco = require("artz-economy");
+eco.setUrl(mongodb);
+
+let exp = await eco.sumarNivel(message.guild.id, message.author.id, 3);
+
+console.log(exp);
+/* {
+    guildID: 'id de la guild',
+    userID: 'id del usuario',
+    mano: 0,
+    banco: 600,
+    xp: 433,
+    nivel: 4
+}*/
+```
+
+## subirNivel
+
+```js
+subirNivel(guildId, userId);
+```
+
+**Argumentos**
+
+1. **guildId:** Acá se deberá insertar la ID de un servidor, la cual se usará para separar la información de un mismo usuario de varios servidores.
+2. **userId:** Acá se deberá insertar la ID del usuario que contendrá la información del mismo.
+
+**Anotación**
+
+- Éste método reiniciará la experiencia del usuario.
+
+**Retorno**
+
+- Retorna la información del usuario.
+
+**Ejemplo**
+
+```js
+const eco = require("artz-economy");
+eco.setUrl(mongodb);
+
+let exp = await eco.subirNivel(message.guild.id, message.author.id);
+
+console.log(exp);
+/* {
+    guildID: 'id de la guild',
+    userID: 'id del usuario',
+    mano: 0,
+    banco: 600,
+    xp: 0,
+    nivel: 2
+}*/
 ```

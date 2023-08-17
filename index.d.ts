@@ -52,5 +52,18 @@ declare module "artz-economy" {
       userId: string,
       cantidad: number
     ): Promise<User>;
+    static async xp(guildId: string, userId: string): Promise<User>;
+    static async nivel(guildId: string, userId: string): Promise<User>;
+    static async sumarXp(
+      guildId: string,
+      userId: string,
+      cantidad: number
+    ): Promise<User>;
+    static async sumarNivel(
+      guildId: string,
+      userId: string,
+      cantidad: number
+    ): Promise<User>;
+    static async subirNivel(guildId: string, userId: string): Promise<User>;
   }
 }
