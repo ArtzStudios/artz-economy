@@ -18,7 +18,11 @@ npm install artz-economy@latest
 
 ## **Changelog**
 
-v0.1.0-a _Actual_
+v0.1.0-b _Actual_
+
+- Se eliminó la importación de ciertas cosas no necesarias. _(Éste cambio se verá reflejado en los archivos de [npmjs](https://npmjs.com/package/artz-economy) y no en el repositorio)_
+
+v0.1.0-a
 
 - Se agregaron opciones de niveles, entre ello, los métodos: `xp`, `nivel`, `sumarXp`, `sumarNivel`, `subirNivel`.
 
