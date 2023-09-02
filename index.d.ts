@@ -6,7 +6,7 @@ type User = {
 };
 
 declare module "artz-economy" {
-  export default class MEconomy {
+  export default class ArtzEconomy {
     static async setUrl(url: string): Promise<typeof import("mongoose")>;
     static async crearPerfil(guildId: string, userId: string): Promise<User>;
     static async borrarPerfil(guildId: string, userId: string): Promise<User>;

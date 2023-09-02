@@ -53,32 +53,32 @@ v0.0.1
 ## **Métodos**
 
 - [fetch](#fetch)
-- [crearPerfil](#crearPerfil)
-- [borrarPerfil](#borrarPerfil)
+- [crearPerfil (createProfile)](#crearPerfil)
+- [borrarPerfil (deleteProfile)](#borrarPerfil)
 
 ---
 
-- [mano](#mano)
-- [sumarMano](#sumarBanco)
-- [restarMano](#restarMano)
-- [establecerMano](#establecerMano)
-- [retirar](#retirar)
+- [mano (wallet)](#mano)
+- [sumarMano (addWallet)](#sumarBanco)
+- [restarMano (substractWallet)](#restarMano)
+- [establecerMano (setWallet)](#establecerMano)
+- [retirar (withdraw)](#retirar)
 
 ---
 
-- [banco](#banco)
-- [sumarBanco](#sumarBanco)
-- [restarBanco](#restarBanco)
-- [establecerBanco](#establecerBanco)
-- [depositar](#depositar)
+- [banco (bank)](#banco)
+- [sumarBanco (addBank)](#sumarBanco)
+- [restarBanco (substractBank)](#restarBanco)
+- [establecerBanco (setBank)](#establecerBanco)
+- [depositar (deposit)](#depositar)
 
 ---
 
-- [xp](#xp)
-- [nivel](#nivel)
-- [sumarXp](#sumarXp)
-- [sumarNivel](#sumarNivel)
-- [subirNivel](#subirNivel)
+- [xp (xp)](#xp)
+- [nivel (level)](#nivel)
+- [sumarXp (addXp)](#sumarXp)
+- [sumarNivel (addlevel)](#sumarNivel)
+- [subirNivel (levelUp)](#subirNivel)
 
 ## fetch
 
