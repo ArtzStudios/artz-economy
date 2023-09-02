@@ -1,5 +1,5 @@
 module.exports = {
-  establecerBanco: async function (guildId, userId, cantidad, usuario) {
+  establecerMano: async function (guildId, userId, cantidad, usuario) {
     if (!userId)
       throw new TypeError(
         "[Artz-Eco] Tienes que proveer una ID de usuario válida."
