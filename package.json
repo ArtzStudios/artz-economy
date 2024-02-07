@@ -23,7 +23,8 @@
   "author": "JuqnDev",
   "license": "MIT",
   "dependencies": {
-    "mongoose": "^7.4.3"
+    "colors": "^1.4.0",
+    "mongoose": "^7.6.8"
   },
   "bugs": {
     "url": "https://github.com/ArtzStudios/artz-econom6/issues"
